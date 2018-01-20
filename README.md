@@ -15,8 +15,8 @@ A Example Project for PDF Viewer in Ionic Framework version 1 supporting Pinch t
 2. Include the path to the lib, angular-pdf-viewer and PDFJS:
 
 ```
-<script src="bower_components/pdfjs-dist/build/pdf.js"></script>
-<script src="bower_components/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
+<script src="lib/pdfjs-dist/build/pdf.js"></script>
+<script src="lib/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
 ```
 
 3. Include the lib as a dependency in your angular app:
