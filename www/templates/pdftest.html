@@ -1,0 +1,19 @@
+<ion-view>
+    <ion-header-bar class="bar-positive">
+        <button class="button icon ion-chevron-left backBtn" ng-click="backPage()"></button>
+        <h2>PDF Viewer</h2>
+    </ion-header-bar>
+    <ion-content>
+        <ion-scroll id="test" max-zoom="5" min-zoom="1" scroll=false; overflow-scroll="false" zooming="true" direction="xy" style="width: 100%;" on-swipe-up="onSwipeUp()" on-swipe-down="onSwipeDown()">   
+                <pdf-viewer 
+                delegate-handle="my-pdf-container"
+                url="pdfUrl"
+                scale="1"
+                ></pdf-viewer>
+
+                
+        </ion-scroll>
+        
+    </ion-content>
+    <p class="pageNumber" ng-if="showdata">{{curpage}} / {{pagecount}}</p>
+</ion-view>
