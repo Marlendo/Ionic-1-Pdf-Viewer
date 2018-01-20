@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
 .controller('HomeCtrl', function($scope,$state) {
 
     $scope.pdf1 = 'http://www.pdf995.com/samples/pdf.pdf';
-    $scope.pdf2 = "http://gahp.net/wp-content/uploads/2017/09/sample.pdf";
+    $scope.pdf2 = 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf';
     
     $scope.gotoPDF1 = function(){
         $state.go('pdftest',{"pdf_name":$scope.pdf1});
@@ -21,6 +21,7 @@ angular.module('starter.controllers', [])
             template: 'Loading...'
     });
     console.log($state.params.pdf_name);
+
     $scope.pdfUrl = $state.params.pdf_name;
     
     var x = pdfDelegate.$getByHandle('my-pdf-container')

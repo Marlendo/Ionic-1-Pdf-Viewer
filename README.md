@@ -1,6 +1,6 @@
-## Ionic 1 PDF Viewer Example Project - PDF Pinch to Zoom
+## Ionic 1 Pdf Viewer with PDF Pinch to Zoom
 
-An Ionic 
+A Example Project for PDF Viewer in Ionic Framework version 1 supporting Pinch to Zoom
 
 ## Dependencies
 
@@ -45,29 +45,29 @@ var app = angular.module('App', ['pdf']);
 ### pdftest.html
 
 ``` html
-<ion-view>
-    <ion-header-bar class="bar-positive">
-        <button class="button button-icon ion-chevron-left backBtn" ng-click="backPage()"></button>
-        <h2 class="title">PDF Viewer</h2>
-    </ion-header-bar>
-    <ion-content>
-        <ion-scroll has-bouncing="false" id="test" max-zoom="5" min-zoom="1" scroll=false; overflow-scroll="false" zooming="true" direction="xy" style="width: 100%;" on-swipe-up="onSwipeUp()" on-swipe-down="onSwipeDown()">   
-            <pdf-viewer delegate-handle="my-pdf-container" url="pdfUrl" scale="2" ></pdf-viewer>
-        </ion-scroll>        
-    </ion-content>
-    <p class="pageNumber" ng-if="showdata">{{curpage}} / {{pagecount}}</p>
-</ion-view>
+    <ion-view>
+        <ion-header-bar class="bar-positive">
+            <button class="button button-icon ion-chevron-left backBtn" ng-click="backPage()"></button>
+            <h2 class="title">PDF Viewer</h2>
+        </ion-header-bar>
+        <ion-content>
+            <ion-scroll has-bouncing="false" id="test" max-zoom="5" min-zoom="1" scroll=false; overflow-scroll="false" zooming="true" direction="xy" style="width: 100%;" on-swipe-up="onSwipeUp()" on-swipe-down="onSwipeDown()">   
+                <pdf-viewer delegate-handle="my-pdf-container" url="pdfUrl" scale="2" ></pdf-viewer>
+            </ion-scroll>        
+        </ion-content>
+        <p class="pageNumber" ng-if="showdata">{{curpage}} / {{pagecount}}</p>
+    </ion-view>
 ```
 
 5. Include following code in your controller files for above views:
 
-### js controller
+### HomeCtrl
 
 ```js
     .controller('HomeCtrl', function($scope,$state) {
 
         $scope.pdf1 = 'http://www.pdf995.com/samples/pdf.pdf';
-        $scope.pdf2 = "http://77.104.162.183/~alrayya3/wp-content/uploads/2018/01/P20-21.pdf";
+        $scope.pdf2 = 'http://gahp.net/wp-content/uploads/2017/09/sample.pdf';
         
         $scope.gotoPDF1 = function(){
             $state.go('pdftest',{"pdf_name":$scope.pdf1});
@@ -78,7 +78,11 @@ var app = angular.module('App', ['pdf']);
         }
         
     })
+```
 
+### PdfTestCtrl
+
+```js
     .controller('PdfTestCtrl', function($scope,pdfDelegate,$ionicHistory,$timeout,$ionicLoading,$state) {
 
         $ionicLoading.show({
@@ -161,5 +165,4 @@ Run `npm install && bower install` to install all dependencies. And then `ionic 
 
 ## Credits
 
-Mozilla for PDF.js
-@winkerVSbecks for angular-pdf-viewer project
+Mozilla for PDF.js and @winkerVSbecks for angular-pdf-viewer project
